@@ -14,18 +14,20 @@ title: 乐为舟
   <a href="{{ '/photos' | relative_url }}" class="nav-item {% if page.url contains 'photos' %}active{% endif %}">相册</a>
 </nav>
 
-<!-- 最近文章区域（修复 Liquid 语法） -->
+<!-- 最近文章区域（彻底移除 {% empty %}，改用 size 判断） -->
 <main class="main-content">
   <h2 class="section-title">最近九篇</h2>
   <ul class="post-list">
-    {% for post in site.posts limit:9 %}
-      <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-      </li>
-    {% empty %}
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts limit:9 %}
+        <li class="post-item">
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    {% else %}
       <li class="no-posts">暂无文章，快来写第一篇吧！</li>
-    {% endfor %}
+    {% endif %}
   </ul>
 </main>
 
