@@ -49,41 +49,42 @@ title: 文章归档
   <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
 </footer>
 
-<!-- 内联样式（包含博主名称的样式） -->
+<!-- 归档页面样式（和主页风格统一） -->
 <style>
-  :root {--bg:#121212;--text:#e0e0e0;--link:#4da6ff;--border:#2a2a2a;--active-nav:#fff;}
+  :root {--bg:#121212;--text:#e0e0e0;--link:#4da6ff;--border:#2a2a2a;}
   * {margin:0;padding:0;box-sizing:border-box;}
-  body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:2rem 4rem;max-width:800px;margin:0 auto;}
   
-  /* 博主名称头部样式 */
-  .blog-header {text-align: center;margin: 3rem 0 1rem;}
-  .blog-name {font-size: 2.2rem;font-weight: 700;color: #ffffff;margin-bottom: 0.5rem;}
-  .blog-subtitle {font-size: 1rem;opacity: 0.7;color: #cccccc;}
+  /* 归档头部样式 */
+  .archive-header {text-align: center;margin: 3rem 0 2rem;}
+  .archive-title {font-size: 1.8rem;font-weight: 700;color: #ffffff;margin-bottom: 0.5rem;}
+  .archive-subtitle {font-size: 1rem;opacity: 0.7;color: #cccccc;}
   
-  .site-nav {margin:2rem 0;text-align: center;} /* 导航栏居中，和博主名称对齐 */
-  .nav-item {color:var(--text);text-decoration:none;margin-right:1.5rem;font-size:0.95rem;opacity:0.8;transition:opacity 0.2s;}
-  .nav-item:hover {opacity:1;color:var(--link);}
-  .section-title {margin:3rem 0 1.5rem;font-size:1.2rem;font-weight:600;border-bottom:1px solid var(--border);padding-bottom:0.5rem;}
-  .post-list {list-style:none;}
-  .post-item {display:flex;margin:0.8rem 0;}
-  .post-date {width:100px;font-size:0.9rem;opacity:0.6;}
-  .post-link {color:var(--link);text-decoration:none;font-size:0.95rem;transition:color 0.2s;}
-  .post-link:hover {color:#66b3ff;}
-  .no-posts {color:var(--text);opacity:0.7;padding:2rem 0;text-align:center;}
+  /* 归档内容样式 */
+  .archive-content {max-width: 700px;margin: 0 auto;padding: 0 2rem;}
+  .archive-year {font-size: 1.4rem;margin: 2.5rem 0 1rem;padding-bottom: 0.5rem;border-bottom: 1px solid var(--border);color: #ffffff;}
+  .archive-post-list {list-style: none;margin-left: 0.5rem;}
+  .archive-post-item {display: flex;margin: 0.8rem 0;align-items: center;}
+  .archive-post-date {width: 80px;font-size: 0.9rem;opacity: 0.6;color: #999;}
+  .archive-post-link {color: var(--link);text-decoration: none;font-size: 0.95rem;transition: color 0.2s;}
+  .archive-post-link:hover {color: #66b3ff;}
+  
+  /* 无文章提示 */
+  .no-archive-posts {text-align: center;color: var(--text);opacity: 0.7;padding: 3rem 0;font-size: 1rem;}
+
+  /* 底部信息样式 */
   .site-footer {margin:4rem 0 2rem;font-size:0.9rem;opacity:0.7;text-align: center;}
   .back-to-top {color:var(--link);text-decoration:none;display:inline-block;margin-bottom:0.5rem;}
   .back-to-top:hover {text-decoration:underline;}
   
   /* 响应式适配 */
   @media (max-width:768px) {
-    body {padding:1rem 1.5rem;}
-    .blog-name {font-size: 1.8rem;}
-    .blog-subtitle {font-size: 0.9rem;}
-    .nav-item {margin-right:1rem;font-size:0.9rem;}
-    .post-item {flex-direction:column;}
-    .post-date {width:auto;margin-bottom:0.2rem;}
+    .archive-title {font-size: 1.5rem;}
+    .archive-content {padding: 0 1.5rem;}
+    .archive-post-item {flex-direction: column;align-items: flex-start;}
+    .archive-post-date {width: auto;margin-bottom: 0.2rem;}
   }
 </style>
+
 
 
 
