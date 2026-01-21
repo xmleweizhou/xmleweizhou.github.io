@@ -2,10 +2,27 @@
 layout: default
 title: 关于我
 ---
+<!-- 归档页面头部 -->
+<header class="archive-header">
+  <h1 class="archive-title">关于我</h1>
+  <p class="archive-subtitle">做人晶莹剔透 做事水滴石穿</p>
+</header>
 
-# 关于我
+<!-- 导航栏 -->
+<nav class="site-nav">
+  
+  <a href="/" class="nav-item">首页</a>
+  <a href="/about" class="nav-item">关于我</a>
+  <a href="/archives" class="nav-item">文章归档</a>
+  <a href="/now" class="nav-item">Now</a>
+  
+  
+</nav>
+乐为舟是笔名，“以乐为舟”，取材自“书山有路勤为径、学海无涯苦作舟”，泛舟学海并不一定“苦”
 
 一位跑者，对技术持有原始的好奇、努力生活、不忘思考
+
+
 
 - 联系方式：your-email@example.com
 
@@ -52,4 +69,5 @@ title: 关于我
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
 </style>
+
 
