@@ -20,24 +20,43 @@ title: Now
 </nav>
 
 📨 Mail Client: 工作邮件用Foxmail，移动端使用官方App，兼用网页端
+
 📝 Notes: flomo、Aplle Notes、原子笔记
+
 ✅ To-Do: Aplle Notes
+
 📷 iPhone Android Photo Shooting: 手机系统自带相机
+
 📆 Calendar: 系统默认日历
+
 📁 Cloud File Storage: 轻度使用百度网盘、阿里云盘
+
 📖 RSS: Foxmail自带
-🙍🏻‍♂️ Contacts: 使用系统自带联系人应用。
-🌐 Browser: Windows 下主要使用 Chrome，移动端使用 Chrome 和Safari。
+
+🙍🏻‍♂️ Contacts: 使用系统自带联系人应用
+
+🌐 Browser: Windows 下主要使用 Chrome，移动端使用 Chrome 和Safari
+
 💬 Chat: 微信、QQ
+
 🤖 AI Model: DeepSeek、豆包
+
 🔖 Bookmarks: 浏览器自带
+
 📜 Word Processing: Typora、记事本、Sublime Text
+
 📈 Spreadsheets: Microsoft Excel
-📊 Presentations: Microsoft Powerpoint。
+
+📊 Presentations: Microsoft Powerpoint
+
 🛒 Shopping Lists: Aplle Notes
+
 🍴 Meal Planning: 不会做饭
+
 💰 Budgeting and Personal Finance: 挖财记账
+
 📰 News: IT之家、RSS订阅
+
 🎵 Music: Apple Music
 
 <!-- 底部信息 -->
@@ -76,4 +95,5 @@ title: Now
     .post-item {flex-direction:column;}
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
+
 </style>
