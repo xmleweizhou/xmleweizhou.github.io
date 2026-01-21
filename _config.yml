@@ -11,7 +11,18 @@ github_username: xmleweizhou # 例如：octocat
 theme: minima
 plugins:
   - jekyll-feed              # 生成RSS订阅
-
+  - jekyll-seo-tag
 # 其他配置
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+excerpt_separator: "<!-- more -->" # 手动指定摘要分隔符
+
+# 排除的文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
