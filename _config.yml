@@ -1,8 +1,8 @@
 # 站点基本信息
-title: 乐为舟          # 例如：张三的技术博客
-email: your-email@example.com # 你的邮箱
-description: >-              # 博客描述
-  这是我的个人博客，分享生活点滴
+#title: 乐为舟          # 例如：张三的技术博客
+#email: your-email@example.com # 你的邮箱
+#description: >-              # 博客描述
+  
 baseurl: ""                  # 留空即可（因为是根域名）
 url: "https://xmleweizhou.github.io" # 你的博客地址
 github_username: xmleweizhou # 例如：octocat
