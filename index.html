@@ -1,0 +1,31 @@
+---
+layout: default
+title: 乐为舟
+---
+
+<!-- 导航栏 -->
+<nav class="site-nav">
+  <a href="{{ '/about' | relative_url }}" class="nav-item {% if page.url contains 'about' %}active{% endif %}">关于我</a>
+  <a href="{{ '/archives' | relative_url }}" class="nav-item {% if page.url contains 'archives' %}active{% endif %}">文章归档</a>
+</nav>
+
+<!-- 最近文章区域 -->
+<main class="main-content">
+  <h2 class="section-title">最近九篇</h2>
+  <ul class="post-list">
+    {% for post in site.posts limit:9 %}
+      <li class="post-item">
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+      </li>
+    {% empty %}
+      <li class="no-posts">暂无文章，快来写第一篇吧！</li>
+    {% endfor %}
+  </ul>
+</main>
+
+<!-- 底部信息 -->
+<footer class="site-footer">
+  <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
+  <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
+</footer>
