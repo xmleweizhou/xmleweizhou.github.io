@@ -11,7 +11,7 @@ title: 关于我
 
 - GitHub：https://github.com/xmleweizhou
 
-- <!-- 底部信息 -->
+<!-- 底部信息 -->
 <footer class="site-footer">
   <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
   <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
@@ -52,3 +52,4 @@ title: 关于我
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
 </style>
+
