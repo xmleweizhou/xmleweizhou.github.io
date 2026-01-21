@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace }}">
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <!-- SEO 优化 -->
+  {% seo %}
+</head>
+<body>
+  <!-- 页面内容容器 -->
+  <div class="page-container">
+    {{ content }} <!-- 页面具体内容（由子页面填充） -->
+  </div>
+</body>
+</html>
