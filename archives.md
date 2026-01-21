@@ -12,6 +12,7 @@ title: 文章归档
 <!-- 导航栏 -->
 <nav class="site-nav">
   
+  <a href="/" class="nav-item">首页</a>
   <a href="/about" class="nav-item">关于我</a>
   <a href="/archives" class="nav-item">文章归档</a>
   <a href="/now" class="nav-item">Now</a>
@@ -83,6 +84,7 @@ title: 文章归档
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
 </style>
+
 
 
 
