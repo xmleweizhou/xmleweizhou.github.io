@@ -42,8 +42,12 @@ title: 文章归档
   {% endif %}
 </div>
 
-<!-- 返回顶部链接 -->
-<a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
+
+<!-- 底部信息 -->
+<footer class="site-footer">
+  <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
+  <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
+</footer>
 
 <!-- 归档页面样式（和主页风格统一） -->
 <style>
@@ -115,4 +119,5 @@ title: 文章归档
     }
   }
 </style>
+
 
