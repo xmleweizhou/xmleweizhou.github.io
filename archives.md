@@ -53,6 +53,11 @@ title: 文章归档
 <style>
   :root {--bg:#121212;--text:#e0e0e0;--link:#4da6ff;--border:#2a2a2a;}
   * {margin:0;padding:0;box-sizing:border-box;}
+
+  /* 导航样式 */
+  .site-nav {margin:2rem 0;text-align: center;} /* 导航栏居中，和博主名称对齐 */
+  .nav-item {color:var(--text);text-decoration:none;margin-right:1.5rem;font-size:0.95rem;opacity:0.8;transition:opacity 0.2s;}
+  .nav-item:hover {opacity:1;color:var(--link);}
   
   /* 归档头部样式 */
   .archive-header {text-align: center;margin: 3rem 0 2rem;}
@@ -84,6 +89,7 @@ title: 文章归档
     .archive-post-date {width: auto;margin-bottom: 0.2rem;}
   }
 </style>
+
 
 
 
