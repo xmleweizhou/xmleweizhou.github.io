@@ -3,6 +3,12 @@ layout: default
 title: 文章归档
 ---
 
+<!-- 归档页面头部 -->
+<header class="archive-header">
+  <h1 class="archive-title">文章归档</h1>
+  <p class="archive-subtitle">按年份整理所有博文</p>
+</header>
+
 <!-- 导航栏 -->
 <nav class="site-nav">
   
@@ -12,12 +18,6 @@ title: 文章归档
   
   
 </nav>
-
-<!-- 归档页面头部 -->
-<header class="archive-header">
-  <h1 class="archive-title">文章归档</h1>
-  <p class="archive-subtitle">按年份整理所有博文</p>
-</header>
 
 <!-- 按年份归档核心逻辑 -->
 <div class="archive-content">
@@ -115,3 +115,4 @@ title: 文章归档
     }
   }
 </style>
+
