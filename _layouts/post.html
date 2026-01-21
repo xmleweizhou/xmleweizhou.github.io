@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<!-- 博文详情头部 -->
+<header class="post-header">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-meta">
+    <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+  </div>
+</header>
+
+<!-- 博文正文 -->
+<article class="post-content">
+  {{ content }}
+</article>
+
+<!-- 返回主页链接 -->
+<div class="back-home">
+  <a href="{{ '/' | relative_url }}">← 返回主页</a>
+</div>
