@@ -18,16 +18,16 @@ title: 关于我
   
   
 </nav>
-乐为舟是笔名，“以乐为舟”，取材自“书山有路勤为径、学海无涯苦作舟”，泛舟学海并不一定“苦”
+<p>乐为舟是笔名，“以乐为舟”，取材自“书山有路勤为径、学海无涯苦作舟”，泛舟学海并不一定“苦”</p>
 
-一位跑者，对技术持有原始的好奇、努力生活、不忘思考
+<p>一位跑者，对技术持有原始的好奇、努力生活、不忘思考</p>
 
 
-
+<p>
 - 联系方式：your-email@example.com
 
 - GitHub：https://github.com/xmleweizhou
-
+</p>
 <!-- 底部信息 -->
 <footer class="site-footer">
   <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
@@ -65,6 +65,7 @@ title: 关于我
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
 </style>
+
 
 
 
