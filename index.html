@@ -5,24 +5,25 @@ title: 乐为舟
 
 <!-- 导航栏 -->
 <nav class="site-nav">
-  <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}">网上邻居</a>
-  <a href="{{ '/about' | relative_url }}" class="nav-item {% if page.url contains 'about' %}active{% endif %}">关于我</a>
-  <a href="{{ '/archives' | relative_url }}" class="nav-item {% if page.url contains 'archives' %}active{% endif %}">文章归档</a>
-  <a href="{{ '/search' | relative_url }}" class="nav-item {% if page.url contains 'search' %}active{% endif %}">搜索</a>
-  <a href="{{ '/now' | relative_url }}" class="nav-item {% if page.url contains 'now' %}active{% endif %}">now</a>
-  <a href="{{ '/digital-garden' | relative_url }}" class="nav-item {% if page.url contains 'digital-garden' %}active{% endif %}">数字花园</a>
-  <a href="{{ '/photos' | relative_url }}" class="nav-item {% if page.url contains 'photos' %}active{% endif %}">相册</a>
+  <a href="/" class="nav-item">网上邻居</a>
+  <a href="/about" class="nav-item">关于我</a>
+  <a href="/archives" class="nav-item">文章归档</a>
+  <a href="/search" class="nav-item">搜索</a>
+  <a href="/now" class="nav-item">now</a>
+  <a href="/digital-garden" class="nav-item">数字花园</a>
+  <a href="/photos" class="nav-item">相册</a>
 </nav>
 
-<!-- 最近文章区域（彻底移除 {% empty %}，改用 size 判断） -->
+<!-- 最近文章区域（纯基础 Liquid 语法，无任何兼容问题） -->
 <main class="main-content">
   <h2 class="section-title">最近九篇</h2>
   <ul class="post-list">
-    {% if site.posts.size > 0 %}
+    {% assign post_count = site.posts | size %}
+    {% if post_count > 0 %}
       {% for post in site.posts limit:9 %}
         <li class="post-item">
           <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+          <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
         </li>
       {% endfor %}
     {% else %}
@@ -36,3 +37,29 @@ title: 乐为舟
   <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
   <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
 </footer>
+
+<!-- 内联样式（避免依赖外部 CSS 文件） -->
+<style>
+  :root {--bg:#121212;--text:#e0e0e0;--link:#4da6ff;--border:#2a2a2a;--active-nav:#fff;}
+  * {margin:0;padding:0;box-sizing:border-box;}
+  body {font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:2rem 4rem;max-width:800px;margin:0 auto;}
+  .site-nav {margin:2rem 0;}
+  .nav-item {color:var(--text);text-decoration:none;margin-right:1.5rem;font-size:0.95rem;opacity:0.8;transition:opacity 0.2s;}
+  .nav-item:hover {opacity:1;color:var(--link);}
+  .section-title {margin:3rem 0 1.5rem;font-size:1.2rem;font-weight:600;border-bottom:1px solid var(--border);padding-bottom:0.5rem;}
+  .post-list {list-style:none;}
+  .post-item {display:flex;margin:0.8rem 0;}
+  .post-date {width:100px;font-size:0.9rem;opacity:0.6;}
+  .post-link {color:var(--link);text-decoration:none;font-size:0.95rem;transition:color 0.2s;}
+  .post-link:hover {color:#66b3ff;}
+  .no-posts {color:var(--text);opacity:0.7;padding:2rem 0;text-align:center;}
+  .site-footer {margin:4rem 0 2rem;font-size:0.9rem;opacity:0.7;}
+  .back-to-top {color:var(--link);text-decoration:none;display:inline-block;margin-bottom:0.5rem;}
+  .back-to-top:hover {text-decoration:underline;}
+  @media (max-width:768px) {
+    body {padding:1rem 1.5rem;}
+    .nav-item {margin-right:1rem;font-size:0.9rem;}
+    .post-item {flex-direction:column;}
+    .post-date {width:auto;margin-bottom:0.2rem;}
+  }
+</style>
