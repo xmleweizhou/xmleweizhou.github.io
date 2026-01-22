@@ -27,9 +27,13 @@ title: 关于我
 
 
 
-- 联系方式：your-email@example.com
+
 
 - GitHub：https://github.com/xmleweizhou
+
+###博客更新日志
+- 2026-01-21 基本完成主页框架及栏目设置
+- 2026-01-22 将_posts下的测试文档清空，上传第一篇正式文档
 
 <!-- 底部信息 -->
 <footer class="site-footer">
@@ -68,6 +72,7 @@ title: 关于我
     .post-date {width:auto;margin-bottom:0.2rem;}
   }
 </style>
+
 
 
 
