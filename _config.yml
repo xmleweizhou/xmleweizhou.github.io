@@ -5,20 +5,34 @@ description: "极简风格的个人博客"
 baseurl: "" 
 url: "https://xmleweizhou.github.io" # 替换为你的实际 URL
 
-# 关键：显示未来日期的文章
+# 关键：显示未来日期的文章 + 时区修复
 future: true
 timezone: Asia/Shanghai # 指定时区，避免日期解析错误
 
 # Jekyll 配置
 markdown: kramdown
-theme: minima
+# theme: minima  # 注释默认主题，使用自定义布局
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate # 新增分页插件（需要先安装，见下方说明）
 
 # 博文相关配置
 permalink: /posts/:title/
 excerpt_separator: "<!-- more -->"
+paginate: 9                   # 每页显示9篇文章
+paginate_path: "/page/:num/"  # 分页链接格式
+defaults:                     # 文章默认配置
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "乐为舟"
+
+# GitHub Pages 适配
+sass:
+  style: compressed           # 压缩 CSS
 
 exclude:
   - Gemfile
