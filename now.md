@@ -8,15 +8,13 @@ title: Now
   <p class="archive-subtitle">记录现在的自己</p>
 </header>
 
-<!-- 导航栏 -->
+<!-- 导航栏（新增当前页面高亮逻辑） -->
 <nav class="site-nav">
-  
-  <a href="/" class="nav-item">首页</a>
-  <a href="/about" class="nav-item">关于我</a>
-  <a href="/archives" class="nav-item">文章归档</a>
-  <a href="/now" class="nav-item">Now</a>
-  
-  
+  <!-- 通过 Liquid 语法判断当前页面路径，为对应导航项添加 active 类 -->
+  <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">首页</a>
+  <a href="/about" class="nav-item {% if page.url == '/about' %}active{% endif %}">关于我</a>
+  <a href="/archives" class="nav-item {% if page.url == '/archives' %}active{% endif %}">文章归档</a>
+  <a href="/now" class="nav-item {% if page.url == '/now' %}active{% endif %}">Now</a>
 </nav>
 
 📨 Mail Client: 工作邮件用Foxmail，移动端使用官方App，兼用网页端
@@ -81,6 +79,17 @@ title: Now
   .nav-item {color:var(--text);text-decoration:none;margin-right:1.5rem;font-size:0.95rem;opacity:0.8;transition:opacity 0.2s;}
   .nav-item:hover {opacity:1;color:var(--link);}
 
+  /* 新增：当前页面导航高亮 */
+  .nav-item.active {
+    opacity: 1;
+    color: var(--active-nav);
+    font-weight: 600;
+  }
+  .nav-item:hover:not(.active) {
+    opacity:1;
+    color:var(--link);
+  }
+
   /* 底部样式 */
   .site-footer {margin:4rem 0 2rem;font-size:0.9rem;opacity:0.7;text-align: center;}
   .back-to-top {color:var(--link);text-decoration:none;display:inline-block;margin-bottom:0.5rem;}
@@ -97,3 +106,4 @@ title: Now
   }
 
 </style>
+
