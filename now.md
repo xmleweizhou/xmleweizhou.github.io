@@ -12,9 +12,9 @@ title: Now
 <nav class="site-nav">
   <!-- 通过 Liquid 语法判断当前页面路径，为对应导航项添加 active 类 -->
   <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">首页</a>
-  <a href="/about" class="nav-item {% if page.url == '/about' %}active{% endif %}">关于我</a>
-  <a href="/archives" class="nav-item {% if page.url == '/archives' %}active{% endif %}">文章归档</a>
-  <a href="/now" class="nav-item {% if page.url == '/now' %}active{% endif %}">Now</a>
+  <a href="/about" class="nav-item {% if page.url contains '/about' %}active{% endif %}">关于我</a>
+  <a href="/archives" class="nav-item {% if page.url contains '/archives' %}active{% endif %}">文章归档</a>
+  <a href="/now" class="nav-item {% if page.url contains '/now' %}active{% endif %}">Now</a>
 </nav>
 
 📨 Mail Client: 工作邮件用Foxmail，移动端使用官方App，兼用网页端
@@ -106,4 +106,5 @@ title: Now
   }
 
 </style>
+
 
