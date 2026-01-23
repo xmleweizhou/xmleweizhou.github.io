@@ -1,25 +1,25 @@
 # 站点基本信息
-title: 乐为舟的博客
-email: your-email@example.com
-description: "极简风格的个人博客"
-baseurl: "" 
+title: 乐为舟的博客 # 博客标题（会在页脚、SEO 中使用）
+email: your-email@example.com # 你的邮箱（可替换为真实邮箱，用于 SEO/联系）
+description: "极简风格的个人博客" # 博客描述（SEO 关键）
+baseurl: "" # 子路径（比如博客部署在 https://xxx.com/blog/ 则填 "/blog"）
 url: "https://xmleweizhou.github.io" # 替换为你的实际 URL
 
 # 关键：显示未来日期的文章 + 时区修复
-future: true
+future: true # 允许显示“发布日期在未来”的文章（比如提前写的草稿）
 timezone: Asia/Shanghai # 指定时区，避免日期解析错误
 
 # Jekyll 配置
-markdown: kramdown
+markdown: kramdown # 解析 Markdown 的引擎（Jekyll 推荐，兼容性最好）
 # theme: minima  # 注释默认主题，使用自定义布局
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-feed # 生成 RSS 订阅源（/feed.xml）
+  - jekyll-seo-tag # 自动生成 SEO 标签（标题、描述、og 标签等）
   - jekyll-paginate # 新增分页插件（需要先安装，见下方说明）
 
 # 博文相关配置
-permalink: /posts/:title/
-excerpt_separator: "<!-- more -->"
+permalink: /posts/:title/ # 文章永久链接格式（比如文章标题为“测试”，链接就是 /posts/测试/）
+excerpt_separator: "<!-- more -->" # 文章摘要分隔符（在 Markdown 中加这个标签，前面的内容会作为摘要）
 paginate: 9                   # 每页显示9篇文章
 paginate_path: "/page/:num/"  # 分页链接格式
 defaults:                     # 文章默认配置
@@ -27,14 +27,14 @@ defaults:                     # 文章默认配置
       path: ""
       type: "posts"
     values:
-      layout: "post"
-      author: "乐为舟"
+      layout: "post"  # 所有文章默认使用 _layouts/post.html 布局
+      author: "乐为舟" # 文章默认作者（可在文章 Front Matter 中覆盖）
 
 # GitHub Pages 适配
 sass:
   style: compressed           # 压缩 CSS
 
-exclude:
+exclude: # Jekyll 构建时忽略这些文件/文件夹（避免冗余）
   - Gemfile
   - Gemfile.lock
   - node_modules
