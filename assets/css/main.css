@@ -28,9 +28,10 @@ body {
   padding: 2rem 4rem;
 }
 
-/* 导航栏样式 */
+/* 导航栏样式（优化优先级） */
 .site-nav {
   margin: 2rem 0 3rem;
+  text-align: center; /* 导航文字居中 */
 }
 
 .nav-item {
@@ -42,9 +43,15 @@ body {
   transition: all 0.2s ease;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-item:hover:not(.active) {
   opacity: 1;
-  color: var(--active-nav);
+  color: var(--link);
+}
+
+.nav-item.active {
+  opacity: 1 !important;
+  color: var(--active-nav) !important;
+  font-weight: 600;
 }
 
 /* 主页文章列表样式 */
@@ -89,11 +96,12 @@ body {
   text-align: center;
 }
 
-/* 页脚样式 */
+/* 页脚样式（优化居中） */
 .site-footer {
   margin: 4rem 0 2rem;
   font-size: 0.9rem;
   opacity: 0.7;
+  text-align: center;
 }
 
 .back-to-top {
@@ -114,6 +122,7 @@ body {
 /* 博文详情页样式 */
 .post-header {
   margin: 2rem 0 3rem;
+  text-align: center; /* 博文标题居中 */
 }
 
 .post-title {
@@ -156,8 +165,42 @@ body {
   font-family: "Consolas", monospace;
 }
 
+/* 新增：表格样式 */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+}
+
+.post-content th, 
+.post-content td {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-content th {
+  background-color: #1f1f1f;
+  font-weight: 600;
+}
+
+.post-content tr:hover {
+  background-color: #181818;
+  transition: background-color 0.2s ease;
+}
+
+/* 新增：图片自适应 */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
 .back-home {
   margin: 3rem 0;
+  text-align: center; /* 返回首页按钮居中 */
 }
 
 .back-home a {
