@@ -9,9 +9,8 @@ title: 文章归档
   <p class="archive-subtitle">按年份整理所有博文</p>
 </header>
 
-<!-- 导航栏（新增当前页面高亮逻辑） -->
+<!-- 导航栏（已修复高亮逻辑） -->
 <nav class="site-nav">
-  <!-- 通过 Liquid 语法判断当前页面路径，为对应导航项添加 active 类 -->
   <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">首页</a>
   <a href="/about" class="nav-item {% if page.url contains '/about' %}active{% endif %}">关于我</a>
   <a href="/archives" class="nav-item {% if page.url contains '/archives' %}active{% endif %}">文章归档</a>
@@ -31,7 +30,7 @@ title: 文章归档
         {% for post in year.items %}
           <li class="archive-post-item">
             <span class="archive-post-date">{{ post.date | date: "%m-%d" }}</span>
-            <a href="{{ post.url }}" class="archive-post-link">{{ post.title }}</a>
+            <a href="{{ post.url | relative_url }}" class="archive-post-link">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -47,20 +46,40 @@ title: 文章归档
   <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }} | YAYU THEME</p>
 </footer>
 
-<!-- 归档页面样式（和主页风格统一） -->
+<!-- 归档页面样式（修复所有问题 + 风格统一） -->
 <style>
-  :root {--bg:#121212;--text:#e0e0e0;--link:#4da6ff;--border:#2a2a2a;}
+  :root {
+    --bg:#121212;
+    --text:#e0e0e0;
+    --link:#4da6ff;
+    --border:#2a2a2a;
+    --active-nav:#fff; /* 补全缺失的高亮变量 */
+  }
   * {margin:0;padding:0;box-sizing:border-box;}
+  /* 补全body基础样式，和其他页面统一 */
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    padding:2rem 4rem;
+    max-width:800px;
+    margin:0 auto;
+  }
 
-  /* 导航样式 */
-  .site-nav {margin:2rem 0;text-align: center;} /* 导航栏居中，和博主名称对齐 */
-  .nav-item {color:var(--text);text-decoration:none;margin-right:1.5rem;font-size:0.95rem;opacity:0.8;transition:opacity 0.2s;}
-  .nav-item:hover {opacity:1;color:var(--link);}
-  
-  /* 新增：当前页面导航高亮 */
+  /* 导航样式（修复优先级 + 统一效果） */
+  .site-nav {margin:2rem 0;text-align: center;}
+  .nav-item {
+    color:var(--text);
+    text-decoration:none;
+    margin-right:1.5rem;
+    font-size:0.95rem;
+    opacity:0.8;
+    transition: all 0.2s;
+  }
   .nav-item.active {
-    opacity: 1;
-    color: var(--active-nav);
+    opacity: 1 !important; /* 强制生效，避免覆盖 */
+    color: var(--active-nav) !important;
     font-weight: 600;
   }
   .nav-item:hover:not(.active) {
@@ -75,35 +94,60 @@ title: 文章归档
   
   /* 归档内容样式 */
   .archive-content {max-width: 700px;margin: 0 auto;padding: 0 2rem;}
-  .archive-year {font-size: 1.4rem;margin: 2.5rem 0 1rem;padding-bottom: 0.5rem;border-bottom: 1px solid var(--border);color: #ffffff;}
+  .archive-year {
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    color: #ffffff;
+  }
   .archive-post-list {list-style: none;margin-left: 0.5rem;}
-  .archive-post-item {display: flex;margin: 0.8rem 0;align-items: center;}
-  .archive-post-date {width: 80px;font-size: 0.9rem;opacity: 0.6;color: #999;}
-  .archive-post-link {color: var(--link);text-decoration: none;font-size: 0.95rem;transition: color 0.2s;}
+  .archive-post-item {
+    display: flex;
+    margin: 0.8rem 0;
+    align-items: center;
+  }
+  .archive-post-date {
+    width: 80px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    color: #999;
+  }
+  .archive-post-link {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
   .archive-post-link:hover {color: #66b3ff;}
   
   /* 无文章提示 */
-  .no-archive-posts {text-align: center;color: var(--text);opacity: 0.7;padding: 3rem 0;font-size: 1rem;}
+  .no-archive-posts {
+    text-align: center;
+    color: var(--text);
+    opacity: 0.7;
+    padding: 3rem 0;
+    font-size: 1rem;
+  }
 
   /* 底部信息样式 */
   .site-footer {margin:4rem 0 2rem;font-size:0.9rem;opacity:0.7;text-align: center;}
-  .back-to-top {color:var(--link);text-decoration:none;display:inline-block;margin-bottom:0.5rem;}
+  .back-to-top {
+    color:var(--link);
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:0.5rem;
+  }
   .back-to-top:hover {text-decoration:underline;}
   
-  /* 响应式适配 */
+  /* 完整响应式适配（和其他页面统一） */
   @media (max-width:768px) {
+    body {padding:1rem 1.5rem;} /* 补全body适配 */
     .archive-title {font-size: 1.5rem;}
-    .archive-content {padding: 0 1.5rem;}
+    .archive-subtitle {font-size: 0.85rem;} /* 适配副标题 */
+    .nav-item {margin-right:1rem;font-size:0.9rem;} /* 适配导航项 */
+    .archive-content {padding: 0 1rem;}
     .archive-post-item {flex-direction: column;align-items: flex-start;}
     .archive-post-date {width: auto;margin-bottom: 0.2rem;}
   }
 </style>
-
-
-
-
-
-
-
-
-
