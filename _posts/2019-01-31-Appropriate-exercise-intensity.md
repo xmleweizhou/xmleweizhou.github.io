@@ -31,4 +31,39 @@ date: 2019-01-31 11:30:00 +0800
 
 从上述活动强度的划分，我们看到，跑步属于高强度运动范围，并没有区分慢跑，还是快跑。那是因为，跑步需要双脚离地的动作，这需要大量的能量消耗。为了身体的健康，跑多快，并不是重点，我们只要每周累计跑150min以上，就能获得很好的健康收益了。
 
+
 还在纠结，自己跑得没有别人快吗？**适合自己**当下情况的运动强度，才是最好的，愉快得跑吧。
+
+<style>
+  /* 代谢当量表格专属样式 - 适配暗黑博客 */
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+th {
+  background-color: #1f1f1f;
+  font-weight: 600;
+  color: #ffffff;
+}
+tr:hover {
+  background-color: #181818;
+  transition: background-color 0.2s;
+}
+blockquote {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid var(--link);
+  background-color: #181818;
+  opacity: 0.9;
+}
+</style>
