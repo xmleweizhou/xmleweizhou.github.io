@@ -11,9 +11,9 @@ title: 关于我
 <!-- 导航栏（新增当前页面高亮逻辑） -->
 <nav class="site-nav">
   <a href="/" class="nav-item {% if page.url == '/' %}active{% endif %}">首页</a>
-  <a href="/about" class="nav-item {% if page.url == '/about' %}active{% endif %}">关于我</a>
-  <a href="/archives" class="nav-item {% if page.url == '/archives' %}active{% endif %}">文章归档</a>
-  <a href="/now" class="nav-item {% if page.url == '/now' %}active{% endif %}">Now</a>
+  <a href="/about" class="nav-item {% if page.url contains '/about' %}active{% endif %}">关于我</a>
+  <a href="/archives" class="nav-item {% if page.url contains '/archives' %}active{% endif %}">文章归档</a>
+  <a href="/now" class="nav-item {% if page.url contains '/now' %}active{% endif %}">Now</a>
 </nav>
 
 <!-- 个人简介 + 更新日志（优化排版） -->
@@ -108,3 +108,4 @@ title: 关于我
     .about-content {padding: 0 0.5rem;}
   }
 </style>
+
