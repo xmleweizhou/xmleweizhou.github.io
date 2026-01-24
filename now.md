@@ -19,7 +19,7 @@ title: Now
 
 📨 Mail Client: 工作邮件用Foxmail，移动端使用官方App，兼用网页端
 
-📝 Notes: flomo、Aplle Notes、原子笔记
+📝 Notes: flomo、Apple Notes、原子笔记
 
 ✅ To-Do: Aplle Notes
 
@@ -47,7 +47,7 @@ title: Now
 
 📊 Presentations: Microsoft Powerpoint
 
-🛒 Shopping Lists: Aplle Notes
+🛒 Shopping Lists: Apple Notes
 
 🍴 Meal Planning: 不会做饭
 
@@ -106,5 +106,6 @@ title: Now
   }
 
 </style>
+
 
 
