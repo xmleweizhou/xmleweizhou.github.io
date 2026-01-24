@@ -21,7 +21,7 @@ title: Now
 
 📝 Notes: flomo、Apple Notes、原子笔记
 
-✅ To-Do: Aplle Notes
+✅ To-Do: Apple Notes
 
 📷 iPhone Android Photo Shooting: 手机系统自带相机
 
@@ -106,6 +106,7 @@ title: Now
   }
 
 </style>
+
 
 
 
